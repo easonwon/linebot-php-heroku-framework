@@ -30,7 +30,8 @@ foreach ($client->parseEvents() as $event) {
             $message = $event['message'];
             switch ($message['type']) {
                 case 'text':
-                	$m_message = $message['text'];
+                    $rt = json_encode($event);
+                	$m_message = $rt;
                 	if($m_message!="")
                 	{
                 		$client->replyMessage(array(
